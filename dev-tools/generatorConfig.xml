@@ -29,7 +29,7 @@
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
                         connectionURL="jdbc:mysql://localhost:3306/yibook?useUnicode=true&amp;characterEncoding=utf8"
                         userId="root"
-                        password="dev123">
+                        password="123456"><!-- password="dev123" -->
         </jdbcConnection>
 
         <javaTypeResolver >

@@ -22,14 +22,15 @@ dependencies {
     }
 }
 
-//
-//gretty {
-//    // overlay ':web-res'
-//    httpPort = 8280
-//    contextPath = "/"
-//    servletContainer = 'jetty9'
-//    // extraResourceBase '../web-assets/src/main/webapp'
-//
-//    debugPort = 5005
-//    debugSuspend = false
-//}
+
+gretty {
+    // overlay ':web-res'
+    // 8280
+    httpPort = 8080
+    contextPath = "/"
+    servletContainer = 'jetty9'
+    // extraResourceBase '../web-assets/src/main/webapp'
+
+    debugPort = 5005
+    debugSuspend = false
+}

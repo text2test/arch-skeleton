@@ -18,7 +18,8 @@ public class Main {
 
         List<String> warnings = new ArrayList<String>();
         boolean overwrite = true;
-        File configFile = new File("/Users/dengyaming/Projects/arch-skeleton/dev-tools/generatorConfig.xml");
+        //File configFile = new File("/Users/dengyaming/Projects/arch-skeleton/dev-tools/generatorConfig.xml");
+        File configFile = new File("F:/dubbox/arch-skeleton/dev-tools/generatorConfig.xml");
         ConfigurationParser cp = new ConfigurationParser(warnings);
         Configuration config = cp.parseConfiguration(configFile);
         DefaultShellCallback callback = new DefaultShellCallback(overwrite);
