@@ -1,7 +1,7 @@
 package com.github.demo.dubbo.provider;
 
 import com.alibaba.dubbo.config.annotation.Service;
-import com.github.demo.model.TActivity;
+import com.github.demo.model.account.TActivity;
 import com.github.demo.service.ActivityService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -40,6 +40,11 @@ public class ActivityServiceDubboImpl implements ActivityService, InitializingBe
 
     @Override
     public TActivity save(TActivity activity) {
+        return null;
+    }
+
+    @Override
+    public TActivity saveNotNull(TActivity activity) {
         return null;
     }
 

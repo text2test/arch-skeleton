@@ -1,7 +1,7 @@
 package com.github.demo.integration;
 
 import com.alibaba.dubbo.common.serialize.support.SerializationOptimizer;
-import com.github.demo.model.TActivity;
+import com.github.demo.model.account.TActivity;
 
 import java.util.Collection;
 import java.util.LinkedList;

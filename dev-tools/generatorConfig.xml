@@ -8,7 +8,7 @@
     <context id="mysqlTables" targetRuntime="MyBatis3Simple" defaultModelType="flat">
 
         <plugin type="com.github.yamingd.mybatis.FlexMapperPlugin">
-            <property name="mappers" value="com.github.demo.mapper.AllMapper"/>
+            <property name="mappers" value="com.github.demo.baseMapper.AllMapper"/>
             <!-- caseSensitive默认false，当数据库表名区分大小写时，可以将该属性设置为true -->
             <property name="caseSensitive" value="true"/>
         </plugin>
@@ -41,6 +41,8 @@
             <property name="trimStrings" value="true" />
         </javaModelGenerator>
 
+        <!-- ahming nots: 原作者使用了account子目录/子包路径，看来系对应区分不同的context即不同的数据库，
+         也有得于更清晰的结构 -->
         <sqlMapGenerator targetPackage="resources/mapper/account"  targetProject="../mapper/src/main">
             <property name="enableSubPackages" value="true" />
         </sqlMapGenerator>
@@ -49,12 +51,13 @@
             <property name="enableSubPackages" value="true" />
         </javaClientGenerator>
 
-        <table tableName="t_activity" domainObjectName="Activity">
+        <!-- TODO: 待更新后作者的进一步修改 -->
+        <table tableName="t_activity" ><!-- domainObjectName="Activity" -->
             <property name="useActualColumnNames" value="true"/>
             <generatedKey column="id" sqlStatement="Mysql" identity="true" />
         </table>
 
-        <table tableName="t_user" domainObjectName="User">
+        <table tableName="t_user" ><!-- domainObjectName="User" -->
             <property name="useActualColumnNames" value="true"/>
             <generatedKey column="id" sqlStatement="Mysql" identity="true" />
         </table>

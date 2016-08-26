@@ -1,7 +1,7 @@
 package com.github.demo.dubbo.consumer;
 
 import com.alibaba.dubbo.config.annotation.Reference;
-import com.github.demo.model.TActivity;
+import com.github.demo.model.account.TActivity;
 import com.github.demo.service.ActivityService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -43,6 +43,11 @@ public class ActivityServiceConsumerImpl implements ActivityService, Initializin
 
     @Override
     public TActivity save(TActivity activity) {
+        return null;
+    }
+
+    @Override
+    public TActivity saveNotNull(TActivity activity) {
         return null;
     }
 

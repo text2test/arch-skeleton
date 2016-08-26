@@ -1,5 +1,6 @@
-package com.github.demo.mapper;
+package com.github.demo.baseMapper;
 
+import com.github.demo.mapper.SelectInProvider;
 import org.apache.ibatis.annotations.SelectProvider;
 import tk.mybatis.mapper.common.Mapper;
 

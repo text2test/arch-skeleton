@@ -1,6 +1,6 @@
 package single;
 
-import com.github.demo.model.TActivity;
+import com.github.demo.model.account.TActivity;
 import com.github.demo.service.ActivityService;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;

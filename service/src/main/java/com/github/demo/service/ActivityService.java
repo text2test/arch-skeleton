@@ -1,6 +1,6 @@
 package com.github.demo.service;
 
-import com.github.demo.model.TActivity;
+import com.github.demo.model.account.TActivity;
 
 import java.util.List;
 

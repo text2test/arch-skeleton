@@ -1,4 +1,4 @@
-package com.github.demo.model.account.gen;
+package com.github.demo.model.account;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -8,901 +8,628 @@ import org.msgpack.annotation.MessagePackMessage;
 
 @Table(name = "t_user")
 @MessagePackMessage
-public abstract class UserGen implements Serializable {
-    /**
-     * 主键
-     */
+public class TUser implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    /**
-     * 真实姓名
-     */
     private String real_name;
 
-    /**
-     * 昵称
-     */
     private String nick_name;
 
-    /**
-     * 手机号
-     */
     private String mobile;
 
-    /**
-     * 登录密码
-     */
     private String hash_passwd;
 
-    /**
-     * 微信id
-     */
     private String wx_id;
 
-    /**
-     * 微信Token
-     */
     private String wx_token;
 
-    /**
-     * QQID
-     */
     private String qq_id;
 
-    /**
-     * QQ令牌
-     */
     private String qq_token;
 
-    /**
-     * weibo标识
-     */
     private String weibo_id;
 
-    /**
-     * weibo令牌
-     */
     private String weibo_token;
 
-    /**
-     * @t_attachment. 头像id
-     */
     private Integer icon_id;
 
-    /**
-     * 头像路径
-     */
     private String icon_path;
 
-    /**
-     * 性别id(1:男,2:女)
-     */
     private Short gender_id;
 
-    /**
-     * 生日
-     */
     private Date birthdate;
 
-    /**
-     * @t_province. 省份id
-     */
     private Integer province_id;
 
-    /**
-     * @t_city. 城市id
-     */
     private Integer city_id;
 
-    /**
-     * @t_city. 区id
-     */
     private Integer district_id;
 
-    /**
-     * 创建时间戳
-     */
     private Date create_date;
 
-    /**
-     * 最后更新时间戳
-     */
     private Date update_time;
 
-    /**
-     * 登录次数
-     */
     private Integer total_login;
 
-    /**
-     * VIP级别(会员等级t_grade)
-     */
     private Short vip_level;
 
-    /**
-     * 积分
-     */
     private Integer total_credit;
 
-    /**
-     * 状态id(1:注册,2:激活,3:封号,4:待审核,9:删除)
-     */
     private Short status_id;
 
-    /**
-     * 未读消息数
-     */
     private Integer total_unread_msg;
 
-    /**
-     * 证件号码
-     */
     private String idcard_no;
 
-    /**
-     * @t_catalog. 证件类型
-     */
     private Integer idcard_type_id;
 
-    /**
-     * @t_attachment. 证件正面照片
-     */
     private Integer idcard_image_id1;
 
-    /**
-     * @t_attachment. 证件反面照片
-     */
     private Integer idcard_image_id2;
 
-    /**
-     * 审核时间
-     */
     private Date approve_time;
 
-    /**
-     * 审核意见
-     */
     private String approve_mark;
 
-    /**
-     * latitude(纬度)
-     */
     private BigDecimal latitude;
 
-    /**
-     * longitude(经度)
-     */
     private BigDecimal longitude;
 
-    /**
-     * 具体地址
-     */
     private String address;
 
-    /**
-     * 1:iPhone,2:iPad,3:Android
-     */
     private Short sign_from;
 
-    /**
-     * @t_device. 注册设备
-     */
     private Integer device_id;
 
-    /**
-     * @t_device. 最后登录设备
-     */
     private Integer last_device_id;
 
-    /**
-     * 1:iPhone,2:iPad,3:Android
-     */
     private Short last_from;
 
-    /**
-     * 总积分
-     */
     private Integer total_score;
 
     /**
-     * 获取主键
-     *
-     * @return id - 主键
+     * @return id
      */
     public Integer getId() {
         return id;
     }
 
     /**
-     * 设置主键
-     *
-     * @param id 主键
+     * @param id
      */
     public void setId(Integer id) {
         this.id = id;
     }
 
     /**
-     * 获取真实姓名
-     *
-     * @return real_name - 真实姓名
+     * @return real_name
      */
     public String getReal_name() {
         return real_name;
     }
 
     /**
-     * 设置真实姓名
-     *
-     * @param real_name 真实姓名
+     * @param real_name
      */
     public void setReal_name(String real_name) {
         this.real_name = real_name == null ? null : real_name.trim();
     }
 
     /**
-     * 获取昵称
-     *
-     * @return nick_name - 昵称
+     * @return nick_name
      */
     public String getNick_name() {
         return nick_name;
     }
 
     /**
-     * 设置昵称
-     *
-     * @param nick_name 昵称
+     * @param nick_name
      */
     public void setNick_name(String nick_name) {
         this.nick_name = nick_name == null ? null : nick_name.trim();
     }
 
     /**
-     * 获取手机号
-     *
-     * @return mobile - 手机号
+     * @return mobile
      */
     public String getMobile() {
         return mobile;
     }
 
     /**
-     * 设置手机号
-     *
-     * @param mobile 手机号
+     * @param mobile
      */
     public void setMobile(String mobile) {
         this.mobile = mobile == null ? null : mobile.trim();
     }
 
     /**
-     * 获取登录密码
-     *
-     * @return hash_passwd - 登录密码
+     * @return hash_passwd
      */
     public String getHash_passwd() {
         return hash_passwd;
     }
 
     /**
-     * 设置登录密码
-     *
-     * @param hash_passwd 登录密码
+     * @param hash_passwd
      */
     public void setHash_passwd(String hash_passwd) {
         this.hash_passwd = hash_passwd == null ? null : hash_passwd.trim();
     }
 
     /**
-     * 获取微信id
-     *
-     * @return wx_id - 微信id
+     * @return wx_id
      */
     public String getWx_id() {
         return wx_id;
     }
 
     /**
-     * 设置微信id
-     *
-     * @param wx_id 微信id
+     * @param wx_id
      */
     public void setWx_id(String wx_id) {
         this.wx_id = wx_id == null ? null : wx_id.trim();
     }
 
     /**
-     * 获取微信Token
-     *
-     * @return wx_token - 微信Token
+     * @return wx_token
      */
     public String getWx_token() {
         return wx_token;
     }
 
     /**
-     * 设置微信Token
-     *
-     * @param wx_token 微信Token
+     * @param wx_token
      */
     public void setWx_token(String wx_token) {
         this.wx_token = wx_token == null ? null : wx_token.trim();
     }
 
     /**
-     * 获取QQID
-     *
-     * @return qq_id - QQID
+     * @return qq_id
      */
     public String getQq_id() {
         return qq_id;
     }
 
     /**
-     * 设置QQID
-     *
-     * @param qq_id QQID
+     * @param qq_id
      */
     public void setQq_id(String qq_id) {
         this.qq_id = qq_id == null ? null : qq_id.trim();
     }
 
     /**
-     * 获取QQ令牌
-     *
-     * @return qq_token - QQ令牌
+     * @return qq_token
      */
     public String getQq_token() {
         return qq_token;
     }
 
     /**
-     * 设置QQ令牌
-     *
-     * @param qq_token QQ令牌
+     * @param qq_token
      */
     public void setQq_token(String qq_token) {
         this.qq_token = qq_token == null ? null : qq_token.trim();
     }
 
     /**
-     * 获取weibo标识
-     *
-     * @return weibo_id - weibo标识
+     * @return weibo_id
      */
     public String getWeibo_id() {
         return weibo_id;
     }
 
     /**
-     * 设置weibo标识
-     *
-     * @param weibo_id weibo标识
+     * @param weibo_id
      */
     public void setWeibo_id(String weibo_id) {
         this.weibo_id = weibo_id == null ? null : weibo_id.trim();
     }
 
     /**
-     * 获取weibo令牌
-     *
-     * @return weibo_token - weibo令牌
+     * @return weibo_token
      */
     public String getWeibo_token() {
         return weibo_token;
     }
 
     /**
-     * 设置weibo令牌
-     *
-     * @param weibo_token weibo令牌
+     * @param weibo_token
      */
     public void setWeibo_token(String weibo_token) {
         this.weibo_token = weibo_token == null ? null : weibo_token.trim();
     }
 
     /**
-     * 获取@t_attachment. 头像id
-     *
-     * @return icon_id - @t_attachment. 头像id
+     * @return icon_id
      */
     public Integer getIcon_id() {
         return icon_id;
     }
 
     /**
-     * 设置@t_attachment. 头像id
-     *
-     * @param icon_id @t_attachment. 头像id
+     * @param icon_id
      */
     public void setIcon_id(Integer icon_id) {
         this.icon_id = icon_id;
     }
 
     /**
-     * 获取头像路径
-     *
-     * @return icon_path - 头像路径
+     * @return icon_path
      */
     public String getIcon_path() {
         return icon_path;
     }
 
     /**
-     * 设置头像路径
-     *
-     * @param icon_path 头像路径
+     * @param icon_path
      */
     public void setIcon_path(String icon_path) {
         this.icon_path = icon_path == null ? null : icon_path.trim();
     }
 
     /**
-     * 获取性别id(1:男,2:女)
-     *
-     * @return gender_id - 性别id(1:男,2:女)
+     * @return gender_id
      */
     public Short getGender_id() {
         return gender_id;
     }
 
     /**
-     * 设置性别id(1:男,2:女)
-     *
-     * @param gender_id 性别id(1:男,2:女)
+     * @param gender_id
      */
     public void setGender_id(Short gender_id) {
         this.gender_id = gender_id;
     }
 
     /**
-     * 获取生日
-     *
-     * @return birthdate - 生日
+     * @return birthdate
      */
     public Date getBirthdate() {
         return birthdate;
     }
 
     /**
-     * 设置生日
-     *
-     * @param birthdate 生日
+     * @param birthdate
      */
     public void setBirthdate(Date birthdate) {
         this.birthdate = birthdate;
     }
 
     /**
-     * 获取@t_province. 省份id
-     *
-     * @return province_id - @t_province. 省份id
+     * @return province_id
      */
     public Integer getProvince_id() {
         return province_id;
     }
 
     /**
-     * 设置@t_province. 省份id
-     *
-     * @param province_id @t_province. 省份id
+     * @param province_id
      */
     public void setProvince_id(Integer province_id) {
         this.province_id = province_id;
     }
 
     /**
-     * 获取@t_city. 城市id
-     *
-     * @return city_id - @t_city. 城市id
+     * @return city_id
      */
     public Integer getCity_id() {
         return city_id;
     }
 
     /**
-     * 设置@t_city. 城市id
-     *
-     * @param city_id @t_city. 城市id
+     * @param city_id
      */
     public void setCity_id(Integer city_id) {
         this.city_id = city_id;
     }
 
     /**
-     * 获取@t_city. 区id
-     *
-     * @return district_id - @t_city. 区id
+     * @return district_id
      */
     public Integer getDistrict_id() {
         return district_id;
     }
 
     /**
-     * 设置@t_city. 区id
-     *
-     * @param district_id @t_city. 区id
+     * @param district_id
      */
     public void setDistrict_id(Integer district_id) {
         this.district_id = district_id;
     }
 
     /**
-     * 获取创建时间戳
-     *
-     * @return create_date - 创建时间戳
+     * @return create_date
      */
     public Date getCreate_date() {
         return create_date;
     }
 
     /**
-     * 设置创建时间戳
-     *
-     * @param create_date 创建时间戳
+     * @param create_date
      */
     public void setCreate_date(Date create_date) {
         this.create_date = create_date;
     }
 
     /**
-     * 获取最后更新时间戳
-     *
-     * @return update_time - 最后更新时间戳
+     * @return update_time
      */
     public Date getUpdate_time() {
         return update_time;
     }
 
     /**
-     * 设置最后更新时间戳
-     *
-     * @param update_time 最后更新时间戳
+     * @param update_time
      */
     public void setUpdate_time(Date update_time) {
         this.update_time = update_time;
     }
 
     /**
-     * 获取登录次数
-     *
-     * @return total_login - 登录次数
+     * @return total_login
      */
     public Integer getTotal_login() {
         return total_login;
     }
 
     /**
-     * 设置登录次数
-     *
-     * @param total_login 登录次数
+     * @param total_login
      */
     public void setTotal_login(Integer total_login) {
         this.total_login = total_login;
     }
 
     /**
-     * 获取VIP级别(会员等级t_grade)
-     *
-     * @return vip_level - VIP级别(会员等级t_grade)
+     * @return vip_level
      */
     public Short getVip_level() {
         return vip_level;
     }
 
     /**
-     * 设置VIP级别(会员等级t_grade)
-     *
-     * @param vip_level VIP级别(会员等级t_grade)
+     * @param vip_level
      */
     public void setVip_level(Short vip_level) {
         this.vip_level = vip_level;
     }
 
     /**
-     * 获取积分
-     *
-     * @return total_credit - 积分
+     * @return total_credit
      */
     public Integer getTotal_credit() {
         return total_credit;
     }
 
     /**
-     * 设置积分
-     *
-     * @param total_credit 积分
+     * @param total_credit
      */
     public void setTotal_credit(Integer total_credit) {
         this.total_credit = total_credit;
     }
 
     /**
-     * 获取状态id(1:注册,2:激活,3:封号,4:待审核,9:删除)
-     *
-     * @return status_id - 状态id(1:注册,2:激活,3:封号,4:待审核,9:删除)
+     * @return status_id
      */
     public Short getStatus_id() {
         return status_id;
     }
 
     /**
-     * 设置状态id(1:注册,2:激活,3:封号,4:待审核,9:删除)
-     *
-     * @param status_id 状态id(1:注册,2:激活,3:封号,4:待审核,9:删除)
+     * @param status_id
      */
     public void setStatus_id(Short status_id) {
         this.status_id = status_id;
     }
 
     /**
-     * 获取未读消息数
-     *
-     * @return total_unread_msg - 未读消息数
+     * @return total_unread_msg
      */
     public Integer getTotal_unread_msg() {
         return total_unread_msg;
     }
 
     /**
-     * 设置未读消息数
-     *
-     * @param total_unread_msg 未读消息数
+     * @param total_unread_msg
      */
     public void setTotal_unread_msg(Integer total_unread_msg) {
         this.total_unread_msg = total_unread_msg;
     }
 
     /**
-     * 获取证件号码
-     *
-     * @return idcard_no - 证件号码
+     * @return idcard_no
      */
     public String getIdcard_no() {
         return idcard_no;
     }
 
     /**
-     * 设置证件号码
-     *
-     * @param idcard_no 证件号码
+     * @param idcard_no
      */
     public void setIdcard_no(String idcard_no) {
         this.idcard_no = idcard_no == null ? null : idcard_no.trim();
     }
 
     /**
-     * 获取@t_catalog. 证件类型
-     *
-     * @return idcard_type_id - @t_catalog. 证件类型
+     * @return idcard_type_id
      */
     public Integer getIdcard_type_id() {
         return idcard_type_id;
     }
 
     /**
-     * 设置@t_catalog. 证件类型
-     *
-     * @param idcard_type_id @t_catalog. 证件类型
+     * @param idcard_type_id
      */
     public void setIdcard_type_id(Integer idcard_type_id) {
         this.idcard_type_id = idcard_type_id;
     }
 
     /**
-     * 获取@t_attachment. 证件正面照片
-     *
-     * @return idcard_image_id1 - @t_attachment. 证件正面照片
+     * @return idcard_image_id1
      */
     public Integer getIdcard_image_id1() {
         return idcard_image_id1;
     }
 
     /**
-     * 设置@t_attachment. 证件正面照片
-     *
-     * @param idcard_image_id1 @t_attachment. 证件正面照片
+     * @param idcard_image_id1
      */
     public void setIdcard_image_id1(Integer idcard_image_id1) {
         this.idcard_image_id1 = idcard_image_id1;
     }
 
     /**
-     * 获取@t_attachment. 证件反面照片
-     *
-     * @return idcard_image_id2 - @t_attachment. 证件反面照片
+     * @return idcard_image_id2
      */
     public Integer getIdcard_image_id2() {
         return idcard_image_id2;
     }
 
     /**
-     * 设置@t_attachment. 证件反面照片
-     *
-     * @param idcard_image_id2 @t_attachment. 证件反面照片
+     * @param idcard_image_id2
      */
     public void setIdcard_image_id2(Integer idcard_image_id2) {
         this.idcard_image_id2 = idcard_image_id2;
     }
 
     /**
-     * 获取审核时间
-     *
-     * @return approve_time - 审核时间
+     * @return approve_time
      */
     public Date getApprove_time() {
         return approve_time;
     }
 
     /**
-     * 设置审核时间
-     *
-     * @param approve_time 审核时间
+     * @param approve_time
      */
     public void setApprove_time(Date approve_time) {
         this.approve_time = approve_time;
     }
 
     /**
-     * 获取审核意见
-     *
-     * @return approve_mark - 审核意见
+     * @return approve_mark
      */
     public String getApprove_mark() {
         return approve_mark;
     }
 
     /**
-     * 设置审核意见
-     *
-     * @param approve_mark 审核意见
+     * @param approve_mark
      */
     public void setApprove_mark(String approve_mark) {
         this.approve_mark = approve_mark == null ? null : approve_mark.trim();
     }
 
     /**
-     * 获取latitude(纬度)
-     *
-     * @return latitude - latitude(纬度)
+     * @return latitude
      */
     public BigDecimal getLatitude() {
         return latitude;
     }
 
     /**
-     * 设置latitude(纬度)
-     *
-     * @param latitude latitude(纬度)
+     * @param latitude
      */
     public void setLatitude(BigDecimal latitude) {
         this.latitude = latitude;
     }
 
     /**
-     * 获取longitude(经度)
-     *
-     * @return longitude - longitude(经度)
+     * @return longitude
      */
     public BigDecimal getLongitude() {
         return longitude;
     }
 
     /**
-     * 设置longitude(经度)
-     *
-     * @param longitude longitude(经度)
+     * @param longitude
      */
     public void setLongitude(BigDecimal longitude) {
         this.longitude = longitude;
     }
 
     /**
-     * 获取具体地址
-     *
-     * @return address - 具体地址
+     * @return address
      */
     public String getAddress() {
         return address;
     }
 
     /**
-     * 设置具体地址
-     *
-     * @param address 具体地址
+     * @param address
      */
     public void setAddress(String address) {
         this.address = address == null ? null : address.trim();
     }
 
     /**
-     * 获取1:iPhone,2:iPad,3:Android
-     *
-     * @return sign_from - 1:iPhone,2:iPad,3:Android
+     * @return sign_from
      */
     public Short getSign_from() {
         return sign_from;
     }
 
     /**
-     * 设置1:iPhone,2:iPad,3:Android
-     *
-     * @param sign_from 1:iPhone,2:iPad,3:Android
+     * @param sign_from
      */
     public void setSign_from(Short sign_from) {
         this.sign_from = sign_from;
     }
 
     /**
-     * 获取@t_device. 注册设备
-     *
-     * @return device_id - @t_device. 注册设备
+     * @return device_id
      */
     public Integer getDevice_id() {
         return device_id;
     }
 
     /**
-     * 设置@t_device. 注册设备
-     *
-     * @param device_id @t_device. 注册设备
+     * @param device_id
      */
     public void setDevice_id(Integer device_id) {
         this.device_id = device_id;
     }
 
     /**
-     * 获取@t_device. 最后登录设备
-     *
-     * @return last_device_id - @t_device. 最后登录设备
+     * @return last_device_id
      */
     public Integer getLast_device_id() {
         return last_device_id;
     }
 
     /**
-     * 设置@t_device. 最后登录设备
-     *
-     * @param last_device_id @t_device. 最后登录设备
+     * @param last_device_id
      */
     public void setLast_device_id(Integer last_device_id) {
         this.last_device_id = last_device_id;
     }
 
     /**
-     * 获取1:iPhone,2:iPad,3:Android
-     *
-     * @return last_from - 1:iPhone,2:iPad,3:Android
+     * @return last_from
      */
     public Short getLast_from() {
         return last_from;
     }
 
     /**
-     * 设置1:iPhone,2:iPad,3:Android
-     *
-     * @param last_from 1:iPhone,2:iPad,3:Android
+     * @param last_from
      */
     public void setLast_from(Short last_from) {
         this.last_from = last_from;
     }
 
     /**
-     * 获取总积分
-     *
-     * @return total_score - 总积分
+     * @return total_score
      */
     public Integer getTotal_score() {
         return total_score;
     }
 
     /**
-     * 设置总积分
-     *
-     * @param total_score 总积分
+     * @param total_score
      */
     public void setTotal_score(Integer total_score) {
         this.total_score = total_score;
@@ -919,7 +646,7 @@ public abstract class UserGen implements Serializable {
         if (getClass() != that.getClass()) {
             return false;
         }
-        UserGen other = (UserGen) that;
+        TUser other = (TUser) that;
         return (this.getId() == null ? other.getId() == null : this.getId().equals(other.getId()))
             && (this.getReal_name() == null ? other.getReal_name() == null : this.getReal_name().equals(other.getReal_name()))
             && (this.getNick_name() == null ? other.getNick_name() == null : this.getNick_name().equals(other.getNick_name()))

@@ -1,7 +1,7 @@
 package consumer;
 
 import com.github.demo.dubbo.consumer.ActivityServiceConsumerImpl;
-import com.github.demo.model.TActivity;
+import com.github.demo.model.account.TActivity;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 

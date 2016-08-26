@@ -1,6 +1,7 @@
 package com.github.demo.service.impl;
 
-import com.github.demo.model.TActivity;
+import com.github.demo.mapper.account.TActivityMapper;
+import com.github.demo.model.account.TActivity;
 import com.github.demo.service.ActivityService;
 import com.google.common.base.Preconditions;
 import org.slf4j.Logger;
@@ -24,7 +25,7 @@ public class ActivityServiceImpl extends BaseServiceImpl implements ActivityServ
 
     @Override
     public TActivity find(Integer activityId) {
-        activityMapper.selectByExample()
+        //activityMapper.selectByExample();
         return activityMapper.selectByPrimaryKey(activityId);
     }
 
@@ -50,28 +51,30 @@ public class ActivityServiceImpl extends BaseServiceImpl implements ActivityServ
         logger.info("create 0: {}", activity);
         activity = new TActivity();
         activity.setTitle("Title");
-        activity.setChsCode("ChsCode");
-        activity.setProvinceId(1);
-        activity.setCityId(1);
-        activity.setStatusId((short)1);
+        activity.setChs_code("ChsCode");
+        activity.setProvince_id(1);
+        activity.setCity_id(1);
+        activity.setStatus_id((short)1);
         activity.setAddress("Address");
-        activity.setCreateTime((int)(System.currentTimeMillis()/1000));
-        activity.setContactName("Contact Name");
-        activity.setContactPhone("Contact Phone");
-        activity.setIfNew(false);
-        activity.setIfRecommend(false);
-        activity.setIfTop(false);
+        activity.setCreate_time(new Date()); //((int)(System.currentTimeMillis()/1000));
+        activity.setContact_name("Contact Name");
+        activity.setContact_phone("Contact Phone");
+        activity.setIf_new(false);
+        activity.setIf_recommend(false);
+        activity.setIf_top(false);
         activity.setDetail("详细内容");
-        activity.setCoverImageId(1);
-        activity.setStartTime(new Date());
-        activity.setEndTime(new Date());
-        activity.setCreateUserId(1);
-        activity.setTotalAttended(0);
-        activity.setTotalShare(0);
-        activity.setTotalSign(0);
-        activity.setTotalView(0);
-        activity.setTotalWant(0);
-        activityMapper.insertSelective()
+        activity.setCover_image_id(1);
+        activity.setStart_time(new Date());
+        activity.setEnd_time(new Date());
+        activity.setCreate_user_id(1);
+        activity.setTotal_attended(0);
+        activity.setTotal_share(0);
+        activity.setTotal_sign(0);
+        activity.setTotal_view(0);
+        activity.setTotal_want(0);
+
+        //activityMapper.insertSelective();
+
         int id = activityMapper.insert(activity);
         activity.setId(id);
         long end = System.currentTimeMillis() - start;

@@ -20,6 +20,14 @@ import java.util.Set;
 
 /**
  * Created by dengyaming on 7/25/16.
+ *
+ * ahming notes: dengyaming 在最近一个提交 7d0746e 应该系未完整的，表现有好几个地方，可能不限于：
+ *   （1）在 generatorConfig.xml 中好几个地方配置更改，最终生成的结果会造成后续编译错误。如
+ *   domainObjectName 指定，account 子类，引进本类，使得 TActivity 变抽象，添加 gen 子类路径等
+ *   （2）引进 org.msgpack 但没有在 build.gradle 添加引用等
+ *
+ * 鉴于此，为了暂快捷体验，本类适当作了调整以使编译等通过。
+ * TODO：适当时间，要更新原作者的后续提交，再相应处理
  */
 public class FlexMapperPlugin extends MapperPlugin {
 
@@ -46,8 +54,15 @@ public class FlexMapperPlugin extends MapperPlugin {
     @Override
     public boolean validate(List<String> warnings) {
 
-        modelProperties.validate("gen", "Gen");
-        mapperProperties.validate("gen", "Gen");
+        // ahming notes: now remove below lines ... they add subpackage and a suffix, but now avoid it...
+        // before: com.github.demo.model.account.gen.ActivityGen
+        // after: com.github.demo.model.account.Activity
+        // 暂去掉 TODO:待更新后作者的进一步修改
+
+        //modelProperties.validate("gen", "Gen");
+        //mapperProperties.validate("gen", "Gen");
+        modelProperties.validate(null, "");
+        mapperProperties.validate(null, "");
 
         return true;
     }
@@ -160,12 +175,12 @@ public class FlexMapperPlugin extends MapperPlugin {
         if (caseSensitive && !topLevelClass.getType().getShortName().equals(tableName)) {
             topLevelClass.addAnnotation("@Table(name = \"" + tableName + "\")");
             topLevelClass.addAnnotation("@MessagePackMessage");
-            topLevelClass.setAbstract(true);
+            //topLevelClass.setAbstract(true); // 暂去掉 TODO:待更新后作者的进一步修改
             topLevelClass.addSuperInterface(new FullyQualifiedJavaType("java.io.Serializable"));
         } else if (!topLevelClass.getType().getShortName().equalsIgnoreCase(tableName)) {
             topLevelClass.addAnnotation("@Table(name = \"" + tableName + "\")");
             topLevelClass.addAnnotation("@MessagePackMessage");
-            topLevelClass.setAbstract(true);
+            //topLevelClass.setAbstract(true); // 暂去掉 TODO:待更新后作者的进一步修改
             topLevelClass.addSuperInterface(new FullyQualifiedJavaType("java.io.Serializable"));
         }
     }

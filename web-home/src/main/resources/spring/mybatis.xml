@@ -44,8 +44,8 @@ http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
 		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
         <property name="properties">
             <value>
-                mappers=com.github.demo.mapper.AllMapper
-            </value>
+				mappers=com.github.demo.baseMapper.AllMapper
+			</value>
         </property>
 	</bean>
 
