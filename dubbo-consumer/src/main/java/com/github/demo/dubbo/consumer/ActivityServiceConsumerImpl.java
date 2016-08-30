@@ -28,6 +28,7 @@ public class ActivityServiceConsumerImpl implements ActivityService, Initializin
 
     @Override
     public List<TActivity> findAll() {
+        logger.info("ActivityServiceConsumerImpl findAll");
         List<TActivity> list = activityService.findAll();
         logger.info("list: {}", list);
         return list;
@@ -58,6 +59,11 @@ public class ActivityServiceConsumerImpl implements ActivityService, Initializin
 
     @Override
     public TActivity remove(TActivity activity) {
+        return null;
+    }
+
+    @Override
+    public List<TActivity> testGetList(TActivity activity) {
         return null;
     }
 

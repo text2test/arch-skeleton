@@ -38,7 +38,9 @@
     <result column="detail" jdbcType="LONGVARCHAR" property="detail" />
   </resultMap>
 
-  <select id="testSelect" resultMap="BaseResultMap">
+  <select id="testSelect" resultMap="BaseResultMap" parameterType="com.github.demo.model.account.TActivity">
+    <![CDATA[
     SELECT * FROM t_activity
+    ]]>
   </select>
 </mapper>

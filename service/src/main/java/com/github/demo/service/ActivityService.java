@@ -51,4 +51,11 @@ public interface ActivityService {
      * @return
      */
     TActivity remove(TActivity activity);
+
+    /**
+     * 测试 mapper xml 中自定义 sql 语句查询
+     * @param activity
+     * @return
+     */
+    List<TActivity> testGetList(TActivity activity);
 }

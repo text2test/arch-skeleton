@@ -41,6 +41,8 @@ public class ActivityServiceImpl extends BaseServiceImpl implements ActivityServ
 //        }
 //        return list;
 
+        logger.info("ActivityServiceImpl findAll");
+
         List<TActivity> activityList = activityMapper.selectAll();
         return activityList;
     }
@@ -110,8 +112,22 @@ public class ActivityServiceImpl extends BaseServiceImpl implements ActivityServ
         return null;
     }
 
+    /**
+     * 测试 mapper xml 中自定义 sql 语句查询
+     * @param activity 查询参数
+     * @return 满足条件的记录
+     */
+    @Override
+    public List<TActivity> testGetList(TActivity activity) {
+        List<TActivity> result = sqlSession.selectList("com.github.demo.mapper.account.TActivityMapper."
+                + "testSelect", activity);
+        logger.info("testGetList result count=" + result.size());
+        return result;
+    }
+
     @Override
     public void afterPropertiesSet() throws Exception {
         logger.debug("activityMapper: {}", activityMapper);
     }
+
 }

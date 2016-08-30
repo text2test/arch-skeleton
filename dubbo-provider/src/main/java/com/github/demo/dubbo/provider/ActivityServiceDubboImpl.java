@@ -30,6 +30,7 @@ public class ActivityServiceDubboImpl implements ActivityService, InitializingBe
 
     @Override
     public List<TActivity> findAll() {
+        logger.info("ActivityServiceDubboImpl findAll (provider)");
         return activityService.findAll();
     }
 
@@ -55,6 +56,11 @@ public class ActivityServiceDubboImpl implements ActivityService, InitializingBe
 
     @Override
     public TActivity remove(TActivity activity) {
+        return null;
+    }
+
+    @Override
+    public List<TActivity> testGetList(TActivity activity) {
         return null;
     }
 
